@@ -81,6 +81,8 @@ class ChannelC(commands.Cog):
 
     @_channel.command()
     async def userlimit(self,ctx,channelName:str,limit:int=0):
+        if not owner_check(ctx):
+            return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
 
         if limit < 0:
             await ctx.send("Limit 0 dan kucuk olamaz")
@@ -112,7 +114,32 @@ class ChannelC(commands.Cog):
         else:
             await ctx.send('Kanal bulundu {}'.format(cc.mention))
 
-    
+    @_channel.command(name="boşlarıal")
+    async def emptydelete(self,ctx,categoryName📏 ):
+        if not owner_check(ctx):
+            return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
+        
+        channel = ''
+        for x in guild.channels:
+            if channelName.upper() == x.name.upper():
+                channel = x
+                break
+        if not channel:
+            return await ctx.send("Bu isimde bir kanal mevcut degil")
+        if channel.type != discord.ChannelType.category:
+            return await ctx.send("Böyle bir kategori kanalı mevcut değil.")
+
+        voiceChannels = channel.voice_channels
+        ss = []
+
+        for chan in voiceChannels:
+            if not chan.members:
+                ss.append(chan)
+
+        for rC in ss:
+            await rC.delete()
+
+        await ctx.send('{0.mention}` {1} tane kanal silindi'.format(ctx.author,len(rC)))
 
 
 def setup(bot):
