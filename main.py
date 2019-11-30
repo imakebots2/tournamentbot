@@ -3,6 +3,7 @@ from discord.ext import commands
 import os
 
 komutlar = {
+    "commands.owner.owner",
     "commands.moderation.channelC"
 }
 
