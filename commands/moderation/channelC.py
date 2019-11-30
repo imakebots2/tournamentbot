@@ -115,7 +115,7 @@ class ChannelC(commands.Cog):
             await ctx.send('Kanal bulundu {}'.format(cc.mention))
 
     @_channel.command(name="boşlarıal")
-    async def emptydelete(self,ctx,categoryName📏 ):
+    async def emptydelete(self,ctx,categoryName:str):
         if not owner_check(ctx):
             return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
         
