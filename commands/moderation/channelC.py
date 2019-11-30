@@ -114,11 +114,11 @@ class ChannelC(commands.Cog):
         else:
             await ctx.send('Kanal bulundu {}'.format(cc.mention))
 
-    @_channel.command(name="boşlarıal")
-    async def emptydelete(self,ctx,categoryName:str):
+    @_channel.command(aliases=["boşlarıal"])
+    async def emptydelete(self,ctx,*,categoryName:str):
         if not owner_check(ctx):
             return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
-        
+        guild = ctx.guild
         channel = ''
         for x in guild.channels:
             if channelName.upper() == x.name.upper():
