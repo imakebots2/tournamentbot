@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-
+import os
 
 komutlar = {
     "commands.moderation.channelC"
@@ -32,4 +32,4 @@ class MyClient(commands.Bot):
 
 
 client = MyClient()
-client.run(process.env.BOT_TOKEN)
+client.run(os.environ('BOT_TOKEN'))
