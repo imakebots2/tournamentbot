@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-
-from * import utils.is_owner
+from utils.is_owner import owner_check
 
 class ChannelC(commands.Cog):
 
