@@ -32,4 +32,4 @@ class MyClient(commands.Bot):
 
 
 client = MyClient()
-client.run('NDUxODM4NDU3NDg5MjYwNTUy.XdveAQ.fkjAj4cT7KTORrqAHRvDPn1a3kE')
+client.run(process.env.BOT_TOKEN)
