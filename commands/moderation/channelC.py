@@ -36,6 +36,7 @@ class ChannelC(commands.Cog):
     async def bitrate(self,ctx, categoryName:str, number:int):
         if not owner_check(ctx):
             return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
+
         if number < 8:
             return await ctx.send('Kanal bitrate i 8 den kucuk olamaz')
         elif number > 96:
@@ -54,7 +55,7 @@ class ChannelC(commands.Cog):
         
         for channel in cc.voice_channels:
             if channel:
-                await channel.edit(bitrate=number)
+                await channel.edit(bitrate=number*1000)
 
         await ctx.send('Butun kanallarin limiti {} ayarlandi'.format(number))
 
