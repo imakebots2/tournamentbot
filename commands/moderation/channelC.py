@@ -84,7 +84,7 @@ class ChannelC(commands.Cog):
 
         if limit < 0:
             await ctx.send("Limit 0 dan kucuk olamaz")
-        elif limit >= 100
+        elif limit >= 100:
             await ctx.send("Limit 99 dan butuk olamaz")
 
         channel = ''
