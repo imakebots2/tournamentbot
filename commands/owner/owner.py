@@ -48,7 +48,7 @@ async def eval_fn(self,ctx, *, cmd):
         '__import__': __import__
     }
     exec(compile(parsed, filename="<ast>", mode="exec"), env)
-
+    
     result = (await eval(f"{fn_name}()", env))
     await ctx.send(result)
 

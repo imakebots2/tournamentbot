@@ -79,6 +79,24 @@ class ChannelC(commands.Cog):
         if ctx.invoked_subcommand is None:
             await ctx.send('{0.command.name} ile ilgili komutlari gormek icin {0.prefix}help {0.command.name} yazin'.format(ctx))
 
+    @_channel.command()
+    async def userlimit(self,ctx,channelName:str,limit:int=0):
+
+        if limit < 0:
+            await ctx.send("Limit 0 dan kucuk olamaz")
+        elif limit >= 100
+            await ctx.send("Limit 99 dan butuk olamaz")
+
+        channel = ''
+        for x in guild.channels:
+            if channelName.upper() == x.name.upper():
+                channel = x
+                break
+        if not channel:
+            return await ctx.send("Bu isimde bir kanal mevcut degil")
+
+        await channel.edit(user_limit=limit)
+        await ctx.send('{0.mention}` {1.name} kullanici limiti {2} ile degistirildi.'.format(ctx.author,channel,limit))
 
     @_channel.command(aliases=['mevcut'])
     async def exist(self,ctx, name:str):
