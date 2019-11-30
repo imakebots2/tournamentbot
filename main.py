@@ -32,4 +32,4 @@ class MyClient(commands.Bot):
 
 
 client = MyClient()
-client.run(os.environ('BOT_TOKEN'))
+client.run(os.environ['BOT_TOKEN'])
