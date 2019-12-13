@@ -88,7 +88,6 @@ class ChannelC(commands.Cog):
             return await ctx.send('O isimde bir kanal bulunamadi')
 
         embed = discord.Embed()
-        embed.set_author(ctx.author.name)
         a = []
         for channel in cc.voice_channels:
             a[len(a)] = channel.name
