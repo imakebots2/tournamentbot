@@ -93,7 +93,8 @@ class ChannelC(commands.Cog):
         for channel in cc.voice_channels:
             a.append(channel.name)
 
-        embed.add_field("Names",'\n'.join(a))
+        channels = '\n'.join(a)
+        embed.add_field("Names",channels)
         await ctx.send(embed)
 
     @commands.group(name='channel',aliases=['kanal'])
