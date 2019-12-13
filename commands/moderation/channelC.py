@@ -91,8 +91,7 @@ class ChannelC(commands.Cog):
         a = []
         i = 0
         for channel in cc.voice_channels:
-            a[i] = channel.name
-            i += 1
+            a.append(channel.name)
 
         embed.add_field("Names",'\n'.join(a))
         await ctx.send(embed)
