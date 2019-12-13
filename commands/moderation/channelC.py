@@ -89,8 +89,10 @@ class ChannelC(commands.Cog):
 
         embed = discord.Embed()
         a = []
+        i = 0
         for channel in cc.voice_channels:
-            a[len(a)] = channel.name
+            a[i] = channel.name
+            i += 1
 
         embed.add_field("Names",'\n'.join(a))
         await ctx.send(embed)
