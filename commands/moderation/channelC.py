@@ -74,6 +74,27 @@ class ChannelC(commands.Cog):
 
         await ctx.send('Kanal sayisi {}'.format(len(cc.voice_channels)))
 
+
+    @category.command()
+    async def channelNames(self,ctx, *,categoryName:str):
+        guild = ctx.guild
+        cc = ''
+        for x in guild.channels:
+            if categoryName.upper() == x.name.upper():
+                cc = x
+                break
+        
+        if not cc:
+            return await ctx.send('O isimde bir kanal bulunamadi')
+
+        embed = discord.Embed()
+        embed.set_author(ctx.author.name)
+        
+        for channel in cc.voice_channels:
+            embed.add_field(channel.name)
+
+        await ctx.send(embed)
+
     @commands.group(name='channel',aliases=['kanal'])
     async def _channel(self,ctx):
         if ctx.invoked_subcommand is None:
@@ -118,6 +139,7 @@ class ChannelC(commands.Cog):
     async def emptydelete(self,ctx,*,channelName:str):
         if not owner_check(ctx):
             return await ctx.send('Yetkin yok dostum piahhauahuahuaha!')
+                
         guild = ctx.guild
         channel = ''
         for x in guild.channels:
