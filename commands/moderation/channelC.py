@@ -89,10 +89,11 @@ class ChannelC(commands.Cog):
 
         embed = discord.Embed()
         embed.set_author(ctx.author.name)
-        
+        a = []
         for channel in cc.voice_channels:
-            embed.add_field(channel.name)
+            a[len(a)] = channel.name
 
+        embed.add_field("Names",'\n'.join(a))
         await ctx.send(embed)
 
     @commands.group(name='channel',aliases=['kanal'])
