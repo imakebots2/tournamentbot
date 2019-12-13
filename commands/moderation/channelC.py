@@ -94,7 +94,7 @@ class ChannelC(commands.Cog):
             a.append(channel.name)
 
         channels = '\n'.join(a)
-        embed.add_field("Names",channels)
+        embed.add_field(name="Names",value=channels)
         await ctx.send(embed)
 
     @commands.group(name='channel',aliases=['kanal'])
